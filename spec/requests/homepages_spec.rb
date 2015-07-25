@@ -9,6 +9,10 @@ describe "Homepages" do
 		page.should have_selector("h1", :text => 'Our Demo App')
 	end
 
+	it "should not have a custom page title" do
+		visit'/home_pages/home'
+		page.should_not have_selector ('title', :text => '| Home')
+
   end
 
   describe "About" do
